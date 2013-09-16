@@ -1,0 +1,5 @@
+package net.geral.slotcar.lapcounter.communication.serial;
+
+public enum DriverState {
+	CREATING, CLOSED, OPEN_REQUESTED, REQUEST_TERMINATE, TERMINATED, OPEN, ERROR_DETECTED, WAIT_FOR_BOOT, CLEAR_INPUT_BUFFER, CHECK_VERSION, CHECK_VERSION_RESPONSE
+}
