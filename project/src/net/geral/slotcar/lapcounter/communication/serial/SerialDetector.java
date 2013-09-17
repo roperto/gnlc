@@ -1,13 +1,10 @@
-package net.geral.slotcar.lapcounter.communication.serial.detector;
+package net.geral.slotcar.lapcounter.communication.serial;
 
 import gnu.io.CommPortIdentifier;
 import java.util.Enumeration;
 import java.util.Vector;
 import net.geral.slotcar.lapcounter.communication.CommunicationDetector;
 import net.geral.slotcar.lapcounter.communication.CommunicationDetectorListener;
-import net.geral.slotcar.lapcounter.communication.serial.DriverError;
-import net.geral.slotcar.lapcounter.communication.serial.DriverState;
-import net.geral.slotcar.lapcounter.communication.serial.SerialDriver;
 import net.geral.slotcar.lapcounter.core.Kernel;
 import net.geral.slotcar.lapcounter.core.Logger;
 import net.geral.slotcar.lapcounter.structs.Configuration;

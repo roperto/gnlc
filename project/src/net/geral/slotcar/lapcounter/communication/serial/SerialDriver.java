@@ -15,7 +15,6 @@ import java.util.TooManyListenersException;
 import net.geral.slotcar.lapcounter.communication.Communication;
 import net.geral.slotcar.lapcounter.communication.CommunicationDetector;
 import net.geral.slotcar.lapcounter.communication.CommunicationDetectorListener;
-import net.geral.slotcar.lapcounter.communication.serial.detector.SerialDetector;
 import net.geral.slotcar.lapcounter.core.Kernel;
 import net.geral.slotcar.lapcounter.core.Logger;
 import net.geral.slotcar.lapcounter.structs.RaceLightState;
@@ -276,6 +275,7 @@ public class SerialDriver extends Communication implements SerialPortEventListen
 		try {
 			switch (state) {
 				case CLOSED:
+				case CREATING:
 					return true;
 				case OPEN:
 					return openLoop();

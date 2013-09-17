@@ -3,7 +3,7 @@ package net.geral.slotcar.lapcounter.core;
 import net.geral.slotcar.lapcounter.communication.Communication;
 import net.geral.slotcar.lapcounter.communication.LapEvent;
 import net.geral.slotcar.lapcounter.communication.LapListener;
-import net.geral.slotcar.lapcounter.communication.none.NoneDriver;
+import net.geral.slotcar.lapcounter.communication.serial.SerialDriver;
 import net.geral.slotcar.lapcounter.core.styles.FreeRun;
 import net.geral.slotcar.lapcounter.gui.MainWindow;
 import net.geral.slotcar.lapcounter.gui.cfgwz.ConfigurationWizard;
@@ -13,7 +13,7 @@ import net.geral.slotcar.lapcounter.structs.PilotsData;
 public class Kernel extends Thread implements LapListener {
 	public final MainWindow		window			= new MainWindow(this);
 	public final Configuration	config			= new Configuration();
-	public final Communication	communication	= new NoneDriver(this);
+	public final Communication	communication	= new SerialDriver(this);
 	public final Commander		commander		= new Commander(this);
 	public final PilotsData		pilots			= new PilotsData();
 
