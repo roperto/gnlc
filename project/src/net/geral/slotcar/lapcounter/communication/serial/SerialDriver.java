@@ -29,6 +29,7 @@ public class SerialDriver extends Communication implements SerialPortEventListen
 	private static final long	CHECK_VERSION_TIMEOUT	= 1000;
 	private static final int	READ_BUFFER_SIZE		= 1024;
 	private static final int	WRITE_BUFFER_SIZE		= 512;
+	private static final long	ERROR_SLEEP				= 1000;
 
 	private static int checkBytesNeeded(byte message) {
 		switch (message) {
@@ -203,6 +204,10 @@ public class SerialDriver extends Communication implements SerialPortEventListen
 	private boolean errorDetected() {
 		Logger.log("Error: " + error.toString() + " (" + error.title + ").");
 		close();
+		try {
+			Thread.sleep(ERROR_SLEEP);
+		}
+		catch (InterruptedException e) {}
 		return false;
 	}
 
